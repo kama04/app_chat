@@ -1,11 +1,33 @@
 services:
+  app:
+    build: .
+    container_name: simple-chat-app
+    restart: unless-stopped
+    depends_on:
+      - mysql
+    environment:
+      PORT: 3000
+      DB_HOST: mysql
+      DB_PORT: 3306
+      DB_USER: simple_chat_user
+      DB_PASSWORD: change-this-database-password
+      DB_NAME: simple_chat
+      JWT_SECRET: change-this-to-a-long-random-secret
+      JWT_EXPIRES_IN: 7d
+    ports:
+      - "3000:3000"
+    volumes:
+      - uploads:/app/public/uploads
+
   mysql:
     image: mysql:8.4
     container_name: simple-chat-mysql
     restart: unless-stopped
     environment:
-      MYSQL_ALLOW_EMPTY_PASSWORD: "yes"
+      MYSQL_ROOT_PASSWORD: change-this-root-password
       MYSQL_DATABASE: simple_chat
+      MYSQL_USER: simple_chat_user
+      MYSQL_PASSWORD: change-this-database-password
     ports:
       - "3306:3306"
     volumes:
@@ -14,3 +36,4 @@ services:
 
 volumes:
   mysql-data:
+  uploads:

@@ -180,6 +180,9 @@ ensurePrivateChatSchema()
     if (error.code === 'ER_ACCESS_DENIED_ERROR') {
       console.error('MySQL refused the username/password in .env.');
       console.error('Create an app database user or update DB_USER and DB_PASSWORD.');
+    } else if (error.code === 'ER_DBACCESS_DENIED_ERROR') {
+      console.error('The MySQL user in .env can log in, but it has no permission on DB_NAME.');
+      console.error('Grant that user access to the database, or set DB_USER/DB_PASSWORD to a user that owns DB_NAME.');
     } else {
       console.error('Make sure MySQL is running and database/schema.sql has been imported.');
     }

@@ -34,10 +34,18 @@ A beginner-friendly chat application inspired by Telegram. It uses Node.js, Expr
    sudo mysql < database/create-app-user.sql
    ```
 
+   If your server does not allow `sudo`, create the database and database user in your hosting control panel, then copy those credentials into `.env`.
+
    Or start MySQL with Docker:
 
    ```bash
    docker compose up -d
+   ```
+
+   To run the full app with Docker:
+
+   ```bash
+   docker compose up --build -d
    ```
 
 3. Copy the environment file:
@@ -65,6 +73,12 @@ A beginner-friendly chat application inspired by Telegram. It uses Node.js, Expr
 
    ```bash
    mysql -u root simple_chat < database/add-private-chat.sql
+   ```
+
+   If you are using a hosting database user:
+
+   ```bash
+   mysql -u YOUR_DB_USER -p YOUR_DB_NAME < database/schema.sql
    ```
 
 5. Start the app:
