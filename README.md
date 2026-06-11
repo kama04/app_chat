@@ -28,6 +28,12 @@ A beginner-friendly chat application inspired by Telegram. It uses Node.js, Expr
    mysql -u root -p < database/schema.sql
    ```
 
+   On a Linux server, create a dedicated MySQL user:
+
+   ```bash
+   sudo mysql < database/create-app-user.sql
+   ```
+
    Or start MySQL with Docker:
 
    ```bash
@@ -41,6 +47,19 @@ A beginner-friendly chat application inspired by Telegram. It uses Node.js, Expr
    ```
 
 4. Update `.env` with your MySQL credentials and a strong `JWT_SECRET`.
+
+   Example server `.env`:
+
+   ```env
+   PORT=3000
+   DB_HOST=localhost
+   DB_PORT=3306
+   DB_USER=simple_chat_user
+   DB_PASSWORD=change-this-database-password
+   DB_NAME=simple_chat
+   JWT_SECRET=change-this-to-a-long-random-secret
+   JWT_EXPIRES_IN=7d
+   ```
 
    If you already created the database before private chat was added, run this once:
 

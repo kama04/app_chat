@@ -176,6 +176,13 @@ ensurePrivateChatSchema()
   })
   .catch((error) => {
     console.error('Database schema check failed:', error);
-    console.error('Make sure MySQL is running and database/schema.sql has been imported.');
+
+    if (error.code === 'ER_ACCESS_DENIED_ERROR') {
+      console.error('MySQL refused the username/password in .env.');
+      console.error('Create an app database user or update DB_USER and DB_PASSWORD.');
+    } else {
+      console.error('Make sure MySQL is running and database/schema.sql has been imported.');
+    }
+
     process.exit(1);
   });
