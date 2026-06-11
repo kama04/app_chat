@@ -28,8 +28,6 @@ services:
       MYSQL_DATABASE: simple_chat
       MYSQL_USER: kamila
       MYSQL_PASSWORD: KY2fAeolV91mI0iZ
-    ports:
-      - "3306:3306"
     volumes:
       - mysql-data:/var/lib/mysql
       - ./database/schema.sql:/docker-entrypoint-initdb.d/01-schema.sql:ro

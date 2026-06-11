@@ -48,6 +48,15 @@ A beginner-friendly chat application inspired by Telegram. It uses Node.js, Expr
    docker compose up --build -d
    ```
 
+   If Docker says `permission denied while trying to connect to the Docker daemon socket`, run Docker as `root` or ask your server admin to add your Linux user to the `docker` group:
+
+   ```bash
+   sudo usermod -aG docker $USER
+   newgrp docker
+   ```
+
+   If your user cannot use `sudo`, switch to `root` and run the Docker command there.
+
 3. Copy the environment file:
 
    ```bash
