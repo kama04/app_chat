@@ -9,8 +9,8 @@ services:
       PORT: 3000
       DB_HOST: mysql
       DB_PORT: 3306
-      DB_USER: simple_chat_user
-      DB_PASSWORD: change-this-database-password
+      DB_USER: kamila
+      DB_PASSWORD: KY2fAeolV91mI0iZ
       DB_NAME: simple_chat
       JWT_SECRET: change-this-to-a-long-random-secret
       JWT_EXPIRES_IN: 7d
@@ -24,10 +24,10 @@ services:
     container_name: simple-chat-mysql
     restart: unless-stopped
     environment:
-      MYSQL_ROOT_PASSWORD: change-this-root-password
+      MYSQL_ROOT_PASSWORD: KY2fAeolV91mI0iZ
       MYSQL_DATABASE: simple_chat
-      MYSQL_USER: simple_chat_user
-      MYSQL_PASSWORD: change-this-database-password
+      MYSQL_USER: kamila
+      MYSQL_PASSWORD: KY2fAeolV91mI0iZ
     ports:
       - "3306:3306"
     volumes:
