@@ -1,6 +1,6 @@
 # Nginx Setup
 
-This config proxies `wywiwyg.net` to the Node.js chat app on port `3000`.
+This config proxies `wywiwyg.net` to the Node.js chat app on port `4744`.
 
 ## Install
 
@@ -24,5 +24,5 @@ sudo certbot --nginx -d wywiwyg.net -d www.wywiwyg.net --email kamila-www@wywiwy
 Make sure the Node app is running on:
 
 ```text
-http://127.0.0.1:3000
+http://127.0.0.1:4744
 ```

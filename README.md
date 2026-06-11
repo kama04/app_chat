@@ -109,6 +109,12 @@ A beginner-friendly chat application inspired by Telegram. It uses Node.js, Expr
    http://localhost:3000
    ```
 
+   With Docker Compose, the app is exposed on:
+
+   ```text
+   http://localhost:4744
+   ```
+
 ## Project Structure
 
 ```text

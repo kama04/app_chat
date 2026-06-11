@@ -15,7 +15,7 @@ services:
       JWT_SECRET: change-this-to-a-long-random-secret
       JWT_EXPIRES_IN: 7d
     ports:
-      - "3000:3000"
+      - "4744:3000"
     volumes:
       - uploads:/app/public/uploads
 
