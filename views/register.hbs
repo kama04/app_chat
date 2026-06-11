@@ -1,0 +1,31 @@
+<main class="auth-shell">
+  <section class="auth-card shadow-sm">
+
+    <h1 class="h3 fw-semibold">Create account</h1>
+    <p class="text-secondary mb-4">Start a simple real-time conversation.</p>
+
+    {{#if error}}
+      <div class="alert alert-danger py-2">{{error}}</div>
+    {{/if}}
+
+    <form method="post" action="/register" class="d-grid gap-3">
+      <div>
+        <label for="username" class="form-label">Username</label>
+        <input id="username" name="username" type="text" class="form-control form-control-lg" value="{{form.username}}" maxlength="50" required>
+      </div>
+      <div>
+        <label for="email" class="form-label">Email</label>
+        <input id="email" name="email" type="email" class="form-control form-control-lg" value="{{form.email}}" required>
+      </div>
+      <div>
+        <label for="password" class="form-label">Password</label>
+        <input id="password" name="password" type="password" class="form-control form-control-lg" minlength="6" required>
+      </div>
+      <button class="btn btn-primary btn-lg" type="submit">Register</button>
+    </form>
+
+    <p class="text-center text-secondary mt-4 mb-0">
+      Already registered? <a href="/login">Login</a>
+    </p>
+  </section>
+</main>

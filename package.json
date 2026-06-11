@@ -1,0 +1,24 @@
+{
+  "name": "simple-telegram-chat",
+  "version": "1.0.0",
+  "description": "A beginner-friendly real-time chat app with Express, Handlebars, Socket.IO, JWT, and MySQL.",
+  "main": "src/server.js",
+  "scripts": {
+    "start": "node src/server.js",
+    "dev": "nodemon src/server.js"
+  },
+  "dependencies": {
+    "bcrypt": "^5.1.1",
+    "cookie-parser": "^1.4.6",
+    "dotenv": "^16.4.7",
+    "express": "^4.18.3",
+    "express-handlebars": "^7.1.3",
+    "jsonwebtoken": "^9.0.2",
+    "multer": "^2.1.1",
+    "mysql2": "^3.9.2",
+    "socket.io": "^4.7.5"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.0"
+  }
+}

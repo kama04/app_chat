@@ -1,0 +1,62 @@
+<div class="chat-app" data-user-id="{{user.id}}" data-token="{{token}}">
+  <aside class="users-panel">
+    <div class="panel-header">
+      <div>
+        <p class="eyebrow mb-1">Simple Chat</p>
+        <h1 class="h5 mb-0">Private chats</h1>
+      </div>
+      <form method="post" action="/logout">
+        <button class="icon-button" type="submit" title="Logout" aria-label="Logout">
+          <i class="bi bi-box-arrow-right"></i>
+        </button>
+      </form>
+    </div>
+    <div id="onlineUsers" class="user-list"></div>
+  </aside>
+
+  <main class="conversation">
+    <header class="conversation-header">
+      <button class="icon-button d-lg-none" id="toggleUsers" type="button" title="Users" aria-label="Users">
+        <i class="bi bi-people"></i>
+      </button>
+      <div>
+        <h2 id="chatTitle" class="h5 mb-0">Select a user</h2>
+        <p id="chatSubtitle" class="text-secondary mb-0">Signed in as {{user.username}}</p>
+      </div>
+    </header>
+
+    <section id="messages" class="messages" aria-live="polite">
+      <div class="empty-chat">
+        <i class="bi bi-person-lines-fill"></i>
+        <p>Choose an online user to start a private chat.</p>
+      </div>
+    </section>
+
+    <form id="messageForm" class="composer">
+      <div id="imagePreview" class="image-preview d-none">
+        <img id="previewImage" src="" alt="Selected image preview">
+        <button id="clearImage" class="icon-button" type="button" title="Remove image" aria-label="Remove image">
+          <i class="bi bi-x-lg"></i>
+        </button>
+      </div>
+      <div id="emojiPicker" class="emoji-picker d-none" aria-label="Emoji keyboard"></div>
+      <div class="composer-row">
+        <label class="icon-button" for="imageInput" title="Upload image" aria-label="Upload image">
+          <i class="bi bi-image"></i>
+        </label>
+        <button id="emojiButton" class="icon-button" type="button" title="Emoji keyboard" aria-label="Emoji keyboard">
+          <i class="bi bi-emoji-smile"></i>
+        </button>
+        <input id="imageInput" name="image" type="file" accept="image/*" hidden>
+        <input id="messageInput" class="form-control" type="text" placeholder="Select a user first" disabled>
+        <button id="sendButton" class="send-button" type="submit" title="Send" aria-label="Send" disabled>
+          <i class="bi bi-send-fill"></i>
+        </button>
+      </div>
+    </form>
+  </main>
+</div>
+
+<script src="/socket.io/socket.io.js"></script>
+<script src="/js/chat.js"></script>
+<script src="/js/layout.js"></script>
