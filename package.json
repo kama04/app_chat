@@ -4,6 +4,7 @@
   "description": "A beginner-friendly real-time chat app with Express, Handlebars, Socket.IO, JWT, and MySQL.",
   "main": "src/server.js",
   "scripts": {
+    "build": "node --check src/server.js && node --check src/routes/authRoutes.js && node --check src/routes/chatRoutes.js && node --check src/routes/uploadRoutes.js && node --check src/middleware/auth.js && node --check src/config/db.js && node --check src/config/ensureSchema.js && node --check src/utils/jwt.js && node --check public/js/chat.js && node --check public/js/layout.js",
     "start": "node src/server.js",
     "dev": "nodemon src/server.js"
   },

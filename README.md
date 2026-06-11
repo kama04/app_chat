@@ -54,6 +54,13 @@ A beginner-friendly chat application inspired by Telegram. It uses Node.js, Expr
    npm run dev
    ```
 
+   For production:
+
+   ```bash
+   npm run build
+   npm start
+   ```
+
 6. Open:
 
    ```text
